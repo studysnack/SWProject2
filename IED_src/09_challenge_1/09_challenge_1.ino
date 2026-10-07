@@ -18,7 +18,7 @@
 #define _EMA_ALPHA 0.35    // EMA weight of new sample (range: 0 to 1)
 						  // Setting EMA to 1 effectively disables EMA filter.
 
-#define MEDIAN_N 3
+#define MEDIAN_N 30
 
 
 class MedianArray {
