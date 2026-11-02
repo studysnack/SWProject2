@@ -1,7 +1,7 @@
 #include <Servo.h>
 
 // Arduino pin assignment
-#define PIN_IR    A0
+#define PIN_IR    0
 #define PIN_LED   9
 #define PIN_SERVO 10
 
@@ -39,7 +39,6 @@ void loop()
   int duty;
   float a_value, dist_raw, dist_filtered;
 
-  // Wait until next event time
   if (time_curr - last_loop_time < LOOP_INTERVAL)
     return;
   last_loop_time += LOOP_INTERVAL;
@@ -79,7 +78,7 @@ void loop()
   dist_ema = EMA_ALPHA * dist_filtered
            + (1.0 - EMA_ALPHA) * dist_ema;
 
-  // Linear Mapping (without map())
+  // Linear Mapping
   duty = _DUTY_MIN
        + (dist_ema - _DIST_MIN)
        * (_DUTY_MAX - _DUTY_MIN)
