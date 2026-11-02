@@ -56,7 +56,7 @@ void loop()
 
   // LED Control
   bool in_range = (dist_raw >= _DIST_MIN && dist_raw <= _DIST_MAX);
-  digitalWrite(PIN_LED, in_range ? HIGH : LOW);
+  digitalWrite(PIN_LED, in_range ? LOW : HIGH);
 
   // Range Filter
   if (a_value <= 9.0) {
